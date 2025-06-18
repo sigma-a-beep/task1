@@ -79,8 +79,7 @@ iptables -t nat -A POSTROUTING -o ens33 -s 172.16.0.0/16 -j MASQUERADE
 systemctl stop firewalld 
 systemctl disable firewalld 
 iptables-save 
-iptables-save > /etc/sysconfig/iptables 
-если не скачивается iptables, но адреса на интерфейсах точнно правильные, то скорее всего проблема с их стороны
+iptables-save > /etc/sysconfig/iptables
 ПРОВЕРЯЕМ ПИНГИ НА 10.39.0.1 С HQ-RTR и BR-RTR 
 _________________________________________________
 
@@ -646,10 +645,6 @@ systemctl restart mariadb
 
 wget https://packaging.moodle.org/stable500/moodle-latest-500.tgz
 tar -xzf moodle-latest-500.tgz (или moodle и клавиша tab, если скачивалась другая версия)
-
-если не устанавливается, то именно в яндекс браузере заходить на  moodle.org, скачивать 5.0.1+,
-скопировать ссылку как начнется загрузка, потом можно отсновить загрузку
-соединение на moodle.org будет очень медленным, это норм
 	
 mv moodle/* /var/www/html
 chown -R apache:apache /var/www/html
@@ -665,7 +660,7 @@ dnf update php
 systemctl restart php-fpm
 setenforse 0 ( эту команду я на всех устройствах писал ) 
 
-переходим на 192.168.100.1 или 192.168.100.10 и оставляем англ язык, не ставить русский
+переходим на 192.168.100.1 или 192.168.100.10 и оставляем англ язык
 Каталог данных указываем /var/moodledata
 
 localhost
